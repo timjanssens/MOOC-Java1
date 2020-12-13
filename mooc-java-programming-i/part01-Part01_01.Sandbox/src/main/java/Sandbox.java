@@ -3,6 +3,6 @@ public class Sandbox {
 
     public static void main(String[] args) {
         // Write your program here
-        System.out.println("Tervetuloa ohjelmoimaan!");
+        System.out.println("Hello there");
     }
 }
