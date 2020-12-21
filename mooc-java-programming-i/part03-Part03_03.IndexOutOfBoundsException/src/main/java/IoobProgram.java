@@ -18,5 +18,9 @@ public class IoobProgram {
             System.out.println(line);
         }
 
+        for (int i = 0; i <= lines.size(); i++) {
+            System.out.println(lines.get(i));
+        }
+
     }
 }
