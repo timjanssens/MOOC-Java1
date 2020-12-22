@@ -17,16 +17,20 @@ public class IndexOf {
             list.add(input);
         }
 
-        //  System.out.println("");
+        System.out.println("");
         // implement here finding the indices of a number
-        int indexOfGreatest = 0;
 
+        System.out.println("Search for? ");
+        int searchNumber = Integer.valueOf(scanner.nextLine());
+      
+        
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(indexOfGreatest) <= list.get(i)) {
-                indexOfGreatest = i;
+            if (searchNumber == list.get(i)) {
+                System.out.println(searchNumber + " is at index " + i);             
             }
         }
-
-        System.out.println("The greatest number: " + list.get(indexOfGreatest));
+        
+       
     }
+
 }
