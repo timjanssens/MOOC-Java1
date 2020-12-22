@@ -16,6 +16,10 @@ public class LastInList {
 
             list.add(input);
         }
+        
+        int indexOfLastString = list.size()-1;
+        
+        System.out.println(list.get(indexOfLastString));
 
     }
 }
