@@ -39,5 +39,6 @@ public class IndexOfSmallest {
                 System.out.println("Found at index: " + i);
             }
         }
+        
     }
 }
