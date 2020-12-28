@@ -1,5 +1,7 @@
 
+import java.io.FileReader;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NumbersFromAFile {
@@ -13,6 +15,23 @@ public class NumbersFromAFile {
         int lowerBound = Integer.valueOf(scanner.nextLine());
         System.out.print("Upper bound? ");
         int upperBound = Integer.valueOf(scanner.nextLine());
+
+        System.out.println("");
+        
+        int count = 0;
+        
+        try (Scanner fileReader = new Scanner(Paths.get(file))) {
+            while (fileReader.hasNextLine()) {
+                int number = Integer.valueOf(fileReader.nextLine());
+                if (number >= lowerBound && number <= upperBound) {
+                    count++;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        
+        System.out.println("Numbers: " + count);
 
     }
 
