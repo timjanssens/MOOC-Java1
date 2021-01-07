@@ -50,5 +50,14 @@ public class MainProgram {
         array[index2] = helper;      
         
     }
+    
+    public static void sort(int[] array) {
+        int indexOfSmallest = 0;
+        for (int i = 0; i < array.length; i++) {
+            indexOfSmallest = indexOfSmallestFrom(array, i);
+            swap(array, i, indexOfSmallest);
+        }
+        System.out.println(array.toString());
+}
 
 }
