@@ -3,7 +3,10 @@ public class MainProgram {
 
     public static void main(String[] args) {
         // write your test code here
-        int[] array = {3, 1, 5, 99, 3, 12};
+        int[] numbers = {-1, 6, 9, 8, 12};
+        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 0));
+        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 1));
+        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 2));
     }
 
     public static int smallest(int[] numbers) {
@@ -14,6 +17,30 @@ public class MainProgram {
             }
         }
         return smallest;
+    }
+
+    public static int indexOfSmallest(int[] array) {
+        int indexSmallest = 0;
+        int smallest = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (smallest > array[i]) {
+                smallest = array[i];
+                indexSmallest = i;
+            }
+        }
+        return indexSmallest;
+    }
+
+    public static int indexOfSmallestFrom(int[] array, int startIndex) {
+        int indexSmallest = 0;
+        int smallest = array[startIndex];
+        for (int i = startIndex; i < array.length; i++) {
+            if (smallest >= array[i]) {
+                smallest = array[i];
+                indexSmallest = i;
+            }
+        }
+        return indexSmallest;
     }
 
 }
