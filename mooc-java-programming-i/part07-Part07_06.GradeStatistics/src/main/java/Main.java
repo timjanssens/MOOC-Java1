@@ -8,5 +8,12 @@ public class Main {
         
         // Write your program here -- consider breaking the program into 
         // multiple classes.
+        
+        Grade grades = new Grade();
+        
+        UserInterface userInterface = new UserInterface(scanner, grades);
+        
+        userInterface.Start();
+        
     }
 }
