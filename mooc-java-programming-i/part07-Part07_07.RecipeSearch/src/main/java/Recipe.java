@@ -22,12 +22,15 @@ public class Recipe {
     public Recipe(String name, int cookingTime, ArrayList<String> ingredients) {
         this.name = name;
         this.cookingTime = cookingTime;
-        this.ingredients = ingredients;
+        for(String ingredient : ingredients){
+            this.ingredients.add(ingredient);
+        }
+        
     }
 
     @Override
     public String toString() {
-        return this.name + ", Cooking time: " + this.cookingTime;
+        return this.name + ", cooking time: " + this.cookingTime;
     }
 
 }
