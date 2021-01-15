@@ -32,6 +32,9 @@ public class UserInterface {
         System.out.println("Commands:");
         System.out.println("list - lists the recipes");
         System.out.println("stop - stops the program");
+        System.out.println("find name - searches recipes by name");
+        System.out.println("find cooking time - searches recipes by cooking time");
+        System.out.println("find ingredient - searches recipes by ingredient");
 
         while (true) {
 
@@ -42,6 +45,51 @@ public class UserInterface {
                 break;
             } else if (command.equals("list")) {
                 PrintRecipiesToScreen();
+            } else if (command.equals("find name")) {
+                SearchForWordInRecipies();
+            } else if (command.equals("find cooking time")) {
+                SearchForRecipiesMaxCoockingTime();
+            } else if (command.equals("find ingredient")) {
+                SearchForIngredients();
+            } else {
+                System.out.println("Unknown command");
+            }
+        }
+    }
+
+    private void SearchForIngredients() {
+        System.out.print("Ingredient: ");
+        String ingredient = inputScanner.nextLine();
+
+        for (Recipe recipe : recipies) {
+            //make new list that contains all recipies per object
+            ArrayList ingredients = recipe.getIngredients();
+            //loop throug ingrediens to check if it matches
+            for (Object ingrediens : ingredients) {
+                if (ingrediens.equals(ingredient)) {
+                    System.out.println(recipe);
+                }
+            }
+        }
+    }
+
+    private void SearchForRecipiesMaxCoockingTime() throws NumberFormatException {
+        System.out.print("Max cooking time: ");
+        int maxCoockingTime = Integer.valueOf(inputScanner.nextLine());
+        for (Recipe recipe : recipies) {
+            if (maxCoockingTime >= recipe.getCookingTime()) {
+                System.out.println(recipe);
+            }
+        }
+    }
+
+    private void SearchForWordInRecipies() {
+        System.out.print("Searched word: ");
+        String searchedWord = inputScanner.nextLine();
+
+        for (Recipe recipe : recipies) {
+            if (recipe.getName().contains(searchedWord)) {
+                System.out.println(recipe);
             }
         }
     }

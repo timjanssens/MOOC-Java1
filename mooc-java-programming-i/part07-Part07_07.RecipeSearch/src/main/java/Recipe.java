@@ -25,8 +25,22 @@ public class Recipe {
         for(String ingredient : ingredients){
             this.ingredients.add(ingredient);
         }
-        
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCookingTime() {
+        return cookingTime;
+    }
+
+    public ArrayList<String> getIngredients() {
+        return ingredients;
+    }
+    
+    
+    
 
     @Override
     public String toString() {
